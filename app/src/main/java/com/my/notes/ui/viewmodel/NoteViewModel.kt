@@ -41,7 +41,7 @@ class NoteViewModel(
         when (event) {
             is NotesEvent.DeleteNote -> {
                 viewModelScope.launch {
-                    dao.deleteNote(event.note)
+                    //dao.deleteNote(event.note)
                 }
             }
             is NotesEvent.SaveNote -> {

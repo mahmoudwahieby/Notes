@@ -43,7 +43,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.12"
     }
     packaging {
         resources {
@@ -77,7 +77,7 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     annotationProcessor(libs.androidx.room.compiler)
     implementation(libs.androidx.navigation.compose)
-    implementation(libs.androidx.material.icons.extended)
+    //implementation(libs.androidx.material.icons.extended)
 
 
 
