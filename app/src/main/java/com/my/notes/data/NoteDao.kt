@@ -1,6 +1,7 @@
 package com.my.notes.data
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Query
 import androidx.room.Upsert
 import kotlinx.coroutines.flow.Flow
@@ -10,8 +11,8 @@ interface NoteDao {
     @Upsert
     suspend fun upsertNote(note: Note)
 
-//    @Delete
-//    suspend fun deleteNote(note: ContactsContract.CommonDataKinds.Note)
+    @Delete
+    suspend fun deleteNote(note: Note)
 
     @Query("SELECT * FROM note ORDER BY date")
     fun getNotesOrderByDate(): Flow<List<Note>>

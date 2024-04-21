@@ -41,13 +41,14 @@ class NoteViewModel(
         when (event) {
             is NotesEvent.DeleteNote -> {
                 viewModelScope.launch {
-                    //dao.deleteNote(event.note)
+                    dao.deleteNote(event.note)
                 }
             }
             is NotesEvent.SaveNote -> {
                 val note = Note(
-                    title = state.value.title.value, description = state
-                        .value.description.value, date = System.currentTimeMillis()
+                    title = state.value.title.value,
+                    description = state.value.description.value,
+                    date = System.currentTimeMillis()
                 )
 
                 viewModelScope.launch {

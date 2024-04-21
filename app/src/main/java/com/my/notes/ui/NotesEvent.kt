@@ -1,6 +1,7 @@
 package com.my.notes.ui
 
-import android.provider.ContactsContract.CommonDataKinds.Note
+import com.my.notes.data.Note
+
 
 sealed interface NotesEvent {
     object SortNotes: NotesEvent

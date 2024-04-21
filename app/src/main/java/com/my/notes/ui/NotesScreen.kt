@@ -13,8 +13,14 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Add
+import androidx.compose.material.icons.outlined.DateRange
+import androidx.compose.material.icons.outlined.Delete
+import androidx.compose.material.icons.outlined.Refresh
 import androidx.compose.material.icons.rounded.Add
+import androidx.compose.material.icons.rounded.Delete
 import androidx.compose.material.icons.rounded.Refresh
+import androidx.compose.material.icons.twotone.Delete
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -58,7 +64,7 @@ fun NotesScreen(
 
                 IconButton(onClick = { onEvent(NotesEvent.SortNotes) }) {
                     Icon(
-                        imageVector = Icons.Rounded.Refresh,
+                        imageVector = Icons.Outlined.DateRange,
                         contentDescription = "Sort Notes",
                         modifier = Modifier.size(32.dp),
                         tint = MaterialTheme.colorScheme.onPrimary
@@ -72,7 +78,7 @@ fun NotesScreen(
                 state.description.value = ""
                 navController.navigate("AddNoteScreen")
             }) {
-                Icon(imageVector = Icons.Rounded.Add, contentDescription = "Add New Note")
+                Icon(imageVector = Icons.Outlined.Add, contentDescription = "Add New Note")
             }
         }
     ) { paddingValues ->
@@ -120,13 +126,13 @@ fun NoteItem(
                 color = MaterialTheme.colorScheme.onSecondaryContainer
             )
         }
-//        IconButton(onClick = { onEvent(NotesEvent.DeleteNote(state.notes[index])) }) {
-//            Icon(
-//                imageVector = Icons.Rounded.Delete,
-//                contentDescription = "Delete Note",
-//                modifier = Modifier.size(32.dp),
-//                tint = MaterialTheme.colorScheme.onPrimaryContainer
-//            )
-//        }
+        IconButton(onClick = { onEvent(NotesEvent.DeleteNote(state.notes[index])) }) {
+            Icon(
+                imageVector = Icons.Outlined.Delete,
+                contentDescription = "Delete Note",
+                modifier = Modifier.size(32.dp),
+                tint = MaterialTheme.colorScheme.onPrimaryContainer
+            )
+        }
     }
 }
