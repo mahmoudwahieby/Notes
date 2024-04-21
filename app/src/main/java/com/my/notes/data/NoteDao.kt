@@ -1,5 +1,6 @@
 package com.my.notes.data
 
+import android.provider.ContactsContract
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Query
@@ -12,7 +13,7 @@ interface NoteDao {
     suspend fun upsertNote(note: Note)
 
     @Delete
-    suspend fun deleteNote(note: Note)
+    suspend fun deleteNote(note: ContactsContract.CommonDataKinds.Note)
 
     @Query("SELECT * FROM note ORDER BY date")
     fun getNotesOrderByDate(): Flow<List<Note>>
